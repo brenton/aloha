@@ -49,6 +49,23 @@
         }
       }
     },
+    "/nihao" : {
+      "get" : {
+        "summary" : "Returns the greeting in Simplified Chinese",
+        "description" : "",
+        "operationId" : "nihao",
+        "produces" : [ "text/plain" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
     "/aloha-chaining" : {
       "get" : {
         "summary" : "Returns the greeting plus the next service in the chain",
