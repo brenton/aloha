@@ -60,6 +60,11 @@ public class AlohaVerticle extends AbstractVerticle {
             ctx.response().end(aloha());
         });
 
+        // nihao EndPoint
+        router.get("/api/nihao").handler(ctx -> {
+            ctx.response().end(nihao());
+        });
+
         // Aloha Chained Endpoint
         router.get("/api/aloha-chaining").handler(ctx -> {
             alohaChaining(list -> {
@@ -89,6 +94,11 @@ public class AlohaVerticle extends AbstractVerticle {
     private String aloha() {
         String hostname = System.getenv().getOrDefault("HOSTNAME", "unknown");
         return String.format("Aloha mai %s", hostname);
+    }
+
+    private String nihao() {
+        String hostname = System.getenv().getOrDefault("HOSTNAME", "unknown");
+        return String.format("你好，我的名字是 %s", hostname);
     }
 
     private void alohaChaining(Handler<List<String>> resultHandler) {
